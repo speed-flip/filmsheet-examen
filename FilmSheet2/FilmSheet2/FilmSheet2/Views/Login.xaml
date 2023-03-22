@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FilmSheet.Views.Login"
+             xmlns:local="clr-namespace:FilmSheet.ViewModel"
+             NavigationPage.HasNavigationBar="False"
+             >
+
+    <ContentPage.BindingContext>
+        <local:VMLogin></local:VMLogin>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#2B3467" Padding="24" CornerRadius="0"   >
+                <Label Text="Crea tu cuenta" HorizontalTextAlignment="Center" TextColor="#FFF" FontSize="36"/>
+            </Frame>
+
+            <Image WidthRequest="00" HeightRequest="150"  Source="https://www.imosver.com/blog/wp-content/uploads/2022/03/Cine-y-literatura-libros-que-inspiraron-peliculas-de-exito.jpg" />
+
+            <Label Text="Nombre" Margin="5,20,0,0" FontSize="18" />
+            <Entry Text="{Binding Nombre}" Placeholder="Ingrese su nombre" />
+
+            <Label Text="Correo electronico" Margin="5,20,0,0" FontSize="18" />
+            <Entry Text="{Binding Email}" Placeholder="Ingrese su usuario" Keyboard="Email" />
+
+            <Label Text="Usuario" Margin="5,20,0,0" FontSize="18" />
+            <Entry Text="{Binding Usuario}" Placeholder="Ingrese un nombre usuario" />
+
+            <Label Text="Contraseña" Margin="5,20,0,0" FontSize="18" />
+            <Entry Text="{Binding Password}" Placeholder="Ingrese su contraseña" IsPassword="True" />
+
+            <Button
+                Text="Crear Cuenta"
+                Background="rgb(22, 22, 255)"
+                TextColor="#FFF"
+                Margin="10, 0"
+                CornerRadius="5"
+                FontSize="17"
+                Command="{Binding CrearCuenta}"
+            />
+
+            <Label
+                TextColor="#1616FF"
+                Text="Cambiar Contraseña"
+                Margin="20,5"
+                FontSize="14"
+                HorizontalTextAlignment="Center"
+                Opacity="0.8"
+            />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

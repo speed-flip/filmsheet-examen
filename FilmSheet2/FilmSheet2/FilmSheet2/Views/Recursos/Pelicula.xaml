@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FilmSheet.Views.Recursos.Pelicula"
+             IconImageSource="pelicula.png"
+             xmlns:local="clr-namespace:FilmSheet.ViewModel"
+             NavigationPage.HasNavigationBar="False"
+             >
+
+    <ContentPage.BindingContext>
+        <local:VMPeliculas></local:VMPeliculas>
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <Frame BackgroundColor="#2B3467" Padding="24" CornerRadius="0">
+            <Label Text="Peliculas Disponibles" HorizontalTextAlignment="Center" TextColor="#FFF" FontSize="25"/>
+        </Frame>
+
+        <CollectionView ItemsSource="{Binding ListaPeli}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.RowSpan="2"
+                           Source="{Binding ImageUrl}"
+                           Aspect="AspectFill"
+                           HeightRequest="60"
+                           WidthRequest="60"
+                        />
+                        <Label Grid.Column="1"
+                           Text="{Binding titulo}"
+                           FontAttributes="Bold"
+                        />
+                        <Label
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding author}"
+                           FontAttributes="Italic"
+                           VerticalOptions="End"
+                        />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+</ContentPage>

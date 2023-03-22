@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FilmSheet.Views.Recursos.Alquilar"
+             xmlns:local="clr-namespace:FilmSheet.ViewModel"
+             IconImageSource="alquilar.png"
+             NavigationPage.HasNavigationBar="False"
+             >
+
+    <ContentPage.BindingContext>
+        <local:VMAlquilar></local:VMAlquilar>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+
+        <Frame BackgroundColor="#2B3467" Padding="24" CornerRadius="0">
+            <Label Text="Prestamos" HorizontalTextAlignment="Center" TextColor="#FFF" FontSize="25"/>
+        </Frame>
+
+        <Picker Title="Libros" ItemsSource="{Binding listaLibros}" SelectedItem="{Binding LibroSeleccionado}" />
+        <Picker Title="Peliculas" ItemsSource="{Binding listaPeliculas}" SelectedItem="{Binding PeliculaSeleccionada}" />
+        <Picker Title="Juegos de Mesa" ItemsSource="{Binding listaJM}" SelectedItem="{Binding JuegoSeleccionado}" />
+
+        <Button
+            Text="Alquilar"
+            Background="rgb(22, 22, 255)"
+            TextColor="#FFF"
+            Margin="5,0"
+            CornerRadius="5"
+            FontSize="17"
+            Command="{Binding Alquilar}"
+        />
+
+        <Label Text="Libro" FontSize="23" TextColor="#000" HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding LibroSeleccionado.titulo}" FontSize="17"/>
+        <Label Text="{Binding LibroSeleccionado.author}" FontSize="17" />
+
+
+        <Label Text="Pelicula" FontSize="23" TextColor="#000" HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding PeliculaSeleccionada.titulo}" FontSize="17" />
+        <Label Text="{Binding PeliculaSeleccionada.author}" FontSize="17" />
+
+        <Label Text="Juego" FontSize="23" TextColor="#000" HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding JuegoSeleccionado.titulo}" FontSize="17" />
+        <Label Text="Edad Minima para jugar" FontSize="17" />
+        <Label Text="{Binding JuegoSeleccionado.edad}" FontSize="17" Margin="5,0"/>
+
+    </StackLayout>
+    
+</ContentPage>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FilmSheet.Views.Recursos.JuegosMesa"
+             xmlns:local="clr-namespace:FilmSheet.ViewModel"
+             IconImageSource="juegosmesa.png"
+             >
+
+    <ContentPage.BindingContext>
+        <local:VMJuegosMesa></local:VMJuegosMesa>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#2B3467" Padding="24" CornerRadius="0">
+                <Label Text="Juegos de Mesa" HorizontalTextAlignment="Center" TextColor="#FFF" FontSize="25"/>
+            </Frame>
+
+            <Label Text="Nombre" Margin="5,20,0,0" FontSize="18" />
+            <Entry Text="{Binding Titulo}" Placeholder="Ingrese el nombre del Juego" />
+
+            <Label Text="Edad" Margin="5,20,0,0" FontSize="18" />
+            <Entry Text="{Binding Edad}" Placeholder="Ingrese la edad minima para jugar" Keyboard="Numeric" />
+
+            <Label Text="Jugadores minimos" Margin="5,20,0,0" FontSize="18" />
+            <Entry Text="{Binding MinJugadores}" Placeholder="Cantidad minima de jugadores para poder jugar" Keyboard="Numeric"/>
+
+            <Label Text="Jugadores maximos" Margin="5,20,0,0" FontSize="18" />
+            <Entry Text="{Binding MaxJugadores}" Placeholder="Cantidad maxico de jugadores" Keyboard="Numeric"/>
+
+            <Label Text="Fabricante" Margin="5,20,0,0" FontSize="18" />
+            <Entry Text="{Binding Fabricante}" Placeholder="Ingrese el nombre deĺ fabricante" />
+
+            <Button
+                Text="Agregar"
+                Background="rgb(22, 22, 255)"
+                TextColor="#FFF"
+                Margin="10, 0"
+                CornerRadius="5"
+                FontSize="17"
+                Command="{Binding CrearJuegoMesa}"
+            />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

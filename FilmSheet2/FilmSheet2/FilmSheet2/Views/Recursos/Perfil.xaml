@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FilmSheet.ViewModel"
+             x:Class="FilmSheet.Views.Recursos.Perfil"
+             IconImageSource="usuario.png"
+             NavigationPage.HasNavigationBar="False"
+             >
+
+    <ContentPage.BindingContext>
+        <local:VMPerfil></local:VMPerfil>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Frame BackgroundColor="#2B3467" Padding="24" CornerRadius="0">
+            <Label Text="Mi Perfil" HorizontalTextAlignment="Center" TextColor="#FFF" FontSize="25"/>
+        </Frame>
+
+        <Grid RowSpacing="0" Margin="0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="0"
+                Text="Nombre:"
+                FontSize="20"
+                Margin="10,0"
+                TextColor="#000"
+                Padding="0"
+             />
+            <Label
+                Grid.Column="1"
+                Text="{Binding Person.nombre}"
+                FontSize="20"
+            />
+        </Grid>
+
+        <Grid RowSpacing="0" Margin="0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="0"
+                Text="Email:"
+                FontSize="20"
+                Margin="10,0"
+                TextColor="#000"
+                Padding="0"
+             />
+            <Label
+                Grid.Column="1"
+                Text="{Binding Person.email}"
+                FontSize="20"
+            />
+        </Grid>
+
+        <Grid RowSpacing="0" Margin="0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="0"
+                Text="Usuario:"
+                FontSize="20"
+                Margin="10,0"
+                TextColor="#000"
+                Padding="0"
+             />
+            <Label
+                Grid.Column="1"
+                Text="{Binding Person.usuario}"
+                FontSize="20"
+            />
+        </Grid>
+
+        <Label Text="libro" />
+        <Label Text="{Binding libro}" />
+
+    </StackLayout>
+    
+</ContentPage>

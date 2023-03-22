@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FilmSheet.Views.Recursos.VMenu"
+            NavigationPage.HasBackButton="False"
+             xmlns:local="clr-namespace:FilmSheet.Views.Recursos"
+             NavigationPage.HasNavigationBar="False"
+            >
+    <!--Pages can be added as references or inline-->
+    <local:Libro></local:Libro>
+    <local:Pelicula></local:Pelicula>
+    <local:JuegosMesa></local:JuegosMesa>
+    <local:Alquilar></local:Alquilar>
+    <local:Perfil></local:Perfil>
+</TabbedPage>
